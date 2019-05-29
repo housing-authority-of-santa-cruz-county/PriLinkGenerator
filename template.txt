@@ -1,0 +1,13 @@
+<%@ Page Language="C#" MasterPageFile="~/members/NowFORMS.master" AutoEventWireup="true" Inherits="members_FaxConfirmation" Title="Fax confirmation" Codebehind="FaxConfirmation.aspx.cs" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<center><table cellspacing=0 class="TableStyle" width="50%">
+    <tr >
+    <td class="TableHeader" >
+        <asp:Label ID="Label1" runat="server" Text="Pri Link List"></asp:Label></td>
+    </tr>
+    <tr><td align=center class="TableBody" >
+        <asp:Label ID="Label2" runat="server" Text="PRI Link List"></asp:Label></td></tr>
+         <tr><td align=center class="TableBody" >
+         ##CONTENT##
+</table></center>
+</asp:Content>
