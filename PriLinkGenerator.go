@@ -15,7 +15,7 @@ func main() {
   csvFile, _ := os.Open("guids.csv")
   reader := csv.NewReader(bufio.NewReader(csvFile))
   var urls []string
-  u, err := url.Parse("http://hasctd1/members/GetPriPreview.aspx?Width=750&PriGuid=e8ec7a41-228c-4df4-9ddc-af4c2963263f&ext=.png")
+  u, err := url.Parse("http://hasctd1/members/GetPriPreview.aspx?Width=2550&PriGuid=e8ec7a41-228c-4df4-9ddc-af4c2963263f&ext=.png")
   if err != nil {
     log.Fatal(err)
   }
