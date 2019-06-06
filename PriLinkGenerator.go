@@ -9,6 +9,7 @@ import (
   "log"
   "os"
   "net/url"
+  "strconv"
 )
 
 func main() {
@@ -36,6 +37,21 @@ func main() {
   var replaceText bytes.Buffer
   for i, u := range urls {
     replaceText.WriteString(fmt.Sprintf("<tr><td><a href='%s'>Link %d</a></td></tr>",u,i))
+    if i % 10000 == 0 {
+      input, err := ioutil.ReadFile("template.txt")
+      if err != nil {
+        fmt.Println(err)
+        os.Exit(1)
+      }
+
+      output := bytes.Replace(input, []byte("##CONTENT##"), replaceText.Bytes(), -1)
+
+      if err = ioutil.WriteFile("PriLinks"+strconv.Itoa(i)+".aspx", output, 0666); err != nil {
+        fmt.Println(err)
+        os.Exit(1)
+      }
+      replaceText.Reset()
+    }
   }
 
   input, err := ioutil.ReadFile("template.txt")
